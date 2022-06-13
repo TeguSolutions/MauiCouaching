@@ -1,4 +1,8 @@
-﻿namespace MauiCouaching;
+﻿using CommunityToolkit.Maui;
+using MauiCouaching.Pages;
+using MauiCouaching.Services;
+
+namespace MauiCouaching;
 
 public static class MauiProgram
 {
@@ -7,11 +11,27 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+        var s = builder.Services;
+
+        #region Page & VM Registrations
+
+        s.AddTransient<MainPage>();
+        s.AddTransient<MainVM>();
+
+        #endregion
+
+        #region Other Services
+
+        s.AddSingleton<DatabaseService>();
+
+        #endregion
 
 		return builder.Build();
 	}

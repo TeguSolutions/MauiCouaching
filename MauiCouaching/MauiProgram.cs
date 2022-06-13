@@ -22,8 +22,14 @@ public static class MauiProgram
 
         #region Page & VM Registrations
 
+        s.AddTransient<AppInitializationPage>();
+        s.AddTransient<AppInitializationVM>();
+
         s.AddTransient<MainPage>();
         s.AddTransient<MainVM>();
+
+        s.AddTransient<DataPage>();
+        s.AddTransient<DataVM>();
 
         #endregion
 

@@ -7,8 +7,22 @@
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
+        Title="Initialization"
+        ContentTemplate="{DataTemplate p:AppInitializationPage}"
+        Route="AppInitializationPage" />
+
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate p:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
+
+    <TabBar>
+        <Tab Title="MainPage">
+            <ShellContent ContentTemplate="{DataTemplate p:MainPage}" Route="MainPage"/>
+        </Tab>
+        <Tab Title="Data Page">
+            <ShellContent ContentTemplate="{DataTemplate p:DataPage}" Route="DataPage"/>
+        </Tab>
+    </TabBar>
 
 </Shell>

@@ -57,4 +57,19 @@
 	  <Folder Include="Helper\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Pages\AppInitializationPage.xaml.cs">
+	    <DependentUpon>AppInitializationPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\AppInitializationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DataPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
